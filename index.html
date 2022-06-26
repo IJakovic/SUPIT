@@ -12,14 +12,14 @@
     <link rel="apple-touch-icon" sizes="72x72" href="/img/Algebra-logo.png">
     <link rel="apple-touch-icon" sizes="114x114" href="/img/Algebra-logo.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/img/Algebra-logo.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <header>
         <nav>
             <ul>
                 <li><img class="Alogo" src="/img/Algebra-logo.png" alt="Algebra-logo"></li>
-                <li><img src="/img/navigation/home.png" alt="home-page"><a href="index.html"> Početna</a></li>
+                <li><img src="/img/navigation/home.png" alt="home-page"><a href="index.html"><span> Početna</span></a></li>
                 <li><img src="/img/navigation/about.png" alt="about-us-page"><a href="about.html"> O nama</a></li>
                 <li><img src="/img/navigation/news.png" alt="news-page"><a href="news.html"> Novosti</a></li>
                 <li><img src="/img/navigation/curriculum.png" alt="curriculum-page"><a href="curriculum.html"> Nastavni plan</a></li>
@@ -28,13 +28,17 @@
         </nav>
     </header>
     <main class="index">
-        <video loop autoplay muted>
-            <source src="/video/typingOnlaptop.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <div class="video-content">
+            <video loop autoplay muted>
+                <source src="/video/typingOnlaptop.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="text-box-onVideo">
+        </div>
     </main>
-    <footer>
-        <img src="/img/zaiskri-bg.jpg" alt="zaiskri">
-    </footer>
+    <script src="js/typed.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>

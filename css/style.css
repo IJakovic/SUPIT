@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    background-color: black;
 }
 
 html{
@@ -11,10 +12,6 @@ html{
 /* Header and Footer */
 header{
     background-color: black;
-    height: 10vh;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
 }
 
 nav ul{
@@ -23,26 +20,30 @@ nav ul{
     align-items: center;
 }
 
-li{
+nav ul li{
     font-size: 1.5rem;
     font-weight: bold;
     list-style-type: none;
     display: flex;
-    margin: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0.75rem 2rem;
+    /* fix margin top && bott */
 }
 
-a{
+li a{
     color: white;
     text-decoration: none;
     margin-left: 0.2rem;
 }
 
-a:hover{
+li a:hover{
     color: yellow;
 }
 
 .Alogo{
     width: 75%;
+    padding: 1rem;
 }
 
 li img{
@@ -53,4 +54,16 @@ li img{
 
 img{
     width: 100%;
+}
+
+.video-content video{
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    
+    
+    nav ul{
+        flex-direction: column;
+    }
 }
