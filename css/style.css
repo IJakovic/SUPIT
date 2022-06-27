@@ -57,7 +57,7 @@ img{
 }
 
 .video-content video{
-    width: 100%;
+    object-fit: fill;
 }
 
 @media only screen and (max-width: 768px) {
