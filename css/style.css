@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     background-color: black;
+    box-sizing: border-box;
 }
 
 html{
@@ -57,7 +58,7 @@ img{
 }
 
 .video-content video{
-    object-fit: fill;
+    width: 100%;
 }
 
 @media only screen and (max-width: 768px) {
