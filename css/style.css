@@ -9,11 +9,39 @@ html{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Header and Footer */
-header{
+/* Header navbar*/
+.custom-navbar-bg-dark{
     background-color: black;
 }
 
+.custom-img-size-big{
+    width: 100%;
+}
+
+.custom-img-size-cert{
+    width: 10rem;
+}
+
+.custom-navbar-icon-size{
+    width: 20px;
+    height: 20px;
+}
+
+.custom-icon-size-heading{
+    width: 4rem;
+}
+
+.custom-icon-size-section{
+    width: 2rem;
+}
+
+.custom-iframe-size{
+    width: 75%;
+    height: 65vh;
+    border: 0;
+}
+
+/*
 nav ul{
     display: flex;
     align-items: center;
@@ -57,6 +85,7 @@ li img{
 img{
     width: 100%;
 }
+*/
 
 .video-container{
     margin: 0;
@@ -79,8 +108,10 @@ img{
     transform: translate(-50%, -50%);
 }
 
+/* 
 @media only screen and (max-width: 768px) {
     nav ul{
         flex-direction: column;
     }
 }
+*/

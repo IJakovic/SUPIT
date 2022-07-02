@@ -13,36 +13,25 @@
     <link rel="apple-touch-icon" sizes="114x114" href="/img/Algebra-logo.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/img/Algebra-logo.png">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><img class="Alogo" src="/img/Algebra-logo.png" alt="Algebra-logo"></li>
-                <li><img src="/img/navigation/home.png" alt="home-page"><a href="index.html"> Početna</a></li>
-                <li><img src="/img/navigation/about.png" alt="about-us-page"><a href="about.html"> O nama</a></li>
-                <li><img src="/img/navigation/news.png" alt="news-page"><a href="news.html"> Novosti</a></li>
-                <li><img src="/img/navigation/curriculum.png" alt="curriculum-page"><a href="curriculum.html"> Nastavni plan</a></li>
-                <li><img src="/img/navigation/contact.png" alt="contact-form"><a href="index.html"> Kontakt</a></li>
-            </ul>
-            <ul class="bookmarks">
-                <li><a href="#C1">Naše vrijednosti</a></li>
-                <li><a href="#C2">Povijest</a></li>
-                <li><a href="#C3">Algebra grupa</a></li>
-                <li><a href="#C4">Kako do nas</a></li>
-            </ul>
-        </nav>
+        <!-- components/navbar.html -->
+        <div id="header"></div>
     </header>
     <main class="about">
         <section>
-            <img src="/img/about/kampus-iz-zraka-min-1.jpg" alt="kampus-iz-zraka">
+            <img src="/img/about/kampus-iz-zraka-min-1.jpg" class="custom-img-size-big" alt="kampus-iz-zraka">
+        </section>
+        <div>
             <h1>O nama</h1>
             <hr>
-            <div>
-                <img src="/img/about/nase-vrijednosti.png" alt="nase-vrijednosti">
-                <h2 id="C1">Naše vrijednosti</h2>
-            </div>
-        </section>
+        </div>
+        <div>
+            <img src="/img/about/nase-vrijednosti.png" class="custom-icon-size-heading" alt="nase-vrijednosti">
+            <h2 id="C1">Naše vrijednosti</h2>
+        </div>
         <section>
             <p>
                 Obećajemo pomoć u pronalasku onoga što voliš
@@ -111,9 +100,11 @@
                     odnosno da zaiskre u Algebri.
                 </p>
             </div>
-            <img src="/img/about/povijest.png" alt="povijest">
-            <h2 id="C2">Povijest</h2>
         </section>
+        <div>
+            <img src="/img/about/povijest.png" class="custom-icon-size-heading" alt="povijest">
+            <h2 id="C2">Povijest</h2>
+        </div>
         <section>
             <p>
                 Zajedno gradimo povijest Algebre. Počeli smo
@@ -270,9 +261,11 @@
                     hrvatske i europske profesore.
                 </p>
             </div>
-            <img src="/img/about/algebra-grupa.png" alt="algebra-grupa">
-            <h2 id="C3">Algebra grupa</h2>
         </section>
+        <div>
+            <img src="/img/about/algebra-grupa.png" class="custom-icon-size-heading" alt="algebra-grupa">
+            <h2 id="C3">Algebra grupa</h2>
+        </div>
         <section>
             <p>
                 Algebra grupa je vodeći hrvatski i regionalni
@@ -297,21 +290,47 @@
             </p>
         </section>
         <section>
-            <img src="/img/about/EC-Council.png" alt="EC-Council">
-            <img src="/img/about/1024px-Cisco_academy.png" alt="Cisco-academy">
-            <img src="/img/about/VUElogo.jpg" alt="VUE">
-            <img src="/img/about/autodesk.png" alt="Autodesk">
-            <img src="/img/about/auth_training_cntr.gif" alt="Adobe">
-            <img src="/img/about/ms_novo.png" alt="Microsoft">
-            <img src="/img/about/redhatLogo.png" alt="redhat">
-            <img src="/img/about/oracleLogo.png" alt="Oracle">
-            <img src="/img/about/kako-do-nas.png" alt="kako-do-nas">
-            <h2 id="C4">Kako do nas</h2>
+            <div>
+                <h3>EC-COUNCIL ACCREDITED TRAINING CENTER - KREDITIRANI TRENING CENTAR</h3>
+                <img src="/img/about/EC-Council.png" class="custom-img-size-cert" alt="EC-Council">
+            </div>
+            <div>
+                <h3>CISCO NETWORKING ACADEMY, CISCO AKADEMIJA MREŽNIH TEHNOLOGIJA</h3>
+                <img src="/img/about/1024px-Cisco_academy.png" class="custom-img-size-cert" alt="Cisco-academy">
+            </div>
+            <div>
+                <h3>VUE ISPITNI CENTAR ZA TESTIRANJE KANDIDATA</h3>
+                <img src="/img/about/VUElogo.jpg" class="custom-img-size-cert" alt="VUE">
+            </div>
+            <div>
+                <h3>AUTODESK TRENING CENTAR ZA AUTOCAD, INVENTOR I 3D STUDIO ALATE</h3>
+                <img src="/img/about/autodesk.png" class="custom-img-size-cert" alt="Autodesk">
+            </div>
+            <div>
+                <h3>ADOBE AUTORIZIRANI TRENING PARTNER ZA GRAFIČKE I WEB APLIKACIJE</h3>
+                <img src="/img/about/auth_training_cntr.gif" class="custom-img-size-cert" alt="Adobe">
+            </div>
+            <div>
+                <h3>MICROSOFT GOLD CERTIFIED PARTNER FOR LEARNING SOLUTIONS</h3>
+                <img src="/img/about/ms_novo.png" class="custom-img-size-cert" alt="Microsoft">
+            </div>
+            <div>
+                <h3>RED HAT AKADEMIJA - PODRŽAVA NASTAVU I CERTIFIKACIJSKE ISPITE</h3>
+                <img src="/img/about/redhatLogo.png" class="custom-img-size-cert" alt="redhat">
+            </div>
+            <div>
+                <h3>ORACLE APPROVED EDUCATION CENTER - PROVEDBA SLUŽBENE ORACLE EDUKACIJE</h3>
+                <img src="/img/about/oracleLogo.png" class="custom-img-size-cert" alt="Oracle">
+            </div>
         </section>
+        <div>
+            <img src="/img/about/kako-do-nas.png" class="custom-icon-size-heading" alt="kako-do-nas">
+            <h2 id="C4">Kako do nas</h2>
+        </div>
         <section>
             <!-- bacground image /kakoDoNas.jpg -->
             <div>
-                <img src="/img/about/lokacija.png" alt="lokacija">
+                <img src="/img/about/lokacija.png" class="custom-icon-size-section" alt="lokacija">
                 <h3>Lokacija</h3>
                 <p>
                     Algebra se nalazi u okviru kampusa Hrvatskog
@@ -325,7 +344,7 @@
                     nove poslovne zgrade koja se nalazi u
                     neposrednoj blizini.
                 </p>
-                <img src="/img/about/kako-do-nas2.png" alt="kako-do-nas">
+                <img src="/img/about/kako-do-nas2.png" class="custom-icon-size-section" alt="kako-do-nas">
                 <h3>Kako do nas?</h3>
                 <p>
                     Algebra je smještena u zapadnom dijelu grada
@@ -335,7 +354,7 @@
                 </p>
             </div>
             <div>
-                <img src="/img/about/javni-prijevoz.png" alt="javni-prijevoz">
+                <img src="/img/about/javni-prijevoz.png" class="custom-icon-size-section" alt="javni-prijevoz">
                 <h3>Javni prijevoz</h3>
                 <p>
                     Od glavnog trga, Trga bana Jelačića,
@@ -345,7 +364,7 @@
                     stanica vožnje tramvajskom linijom 6,
                     također u smjeru Črnomerca.
                 </p>
-                <img src="/img/about/osobno-vozilo.png" alt="osobno-vozilo">
+                <img src="/img/about/osobno-vozilo.png" class="custom-icon-size-section" alt="osobno-vozilo">
                 <h3>Osobno vozilo</h3>
                 <p>
                     O informacije o dolasku automobilom iz
@@ -353,7 +372,7 @@
                     iz smjera Zagrebačke avenije ovdje, a iz
                     smjera Jadranske avenije.
                 </p>
-                <img src="/img/about/parking.png" alt="parking">
+                <img src="/img/about/parking.png" class="custom-icon-size-section" alt="parking">
                 <h3>Parking</h3>
                 <p>
                     Unutar kampusa posjetiteljima je na
@@ -363,18 +382,21 @@
                     Zagrebparkinga.
                 </p>
             </div>
-            <iframe
+            <iframe class="custom-iframe-size"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.8655288840955!2d15.942223215775456!3d45.81395141805798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6d0b190020f%3A0xe193e87e4c855f30!2sIlica%20242%2C%2010000%2C%20Zagreb!5e0!3m2!1sen!2shr!4v1634255992989!5m2!1sen!2shr"
-                width="600"
-                height="450"
-                style="border:0;"
+
                 allowfullscreen="0"
                 loading="lazy">
             </iframe>
         </section>
     </main>
     <footer>
-        <img src="/img/zaiskri-bg.jpg" alt="zaiskri">
+        <!-- components/footer.html -->
+        <div id="footer"></div>
     </footer>
+    <script src="js/typed.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
