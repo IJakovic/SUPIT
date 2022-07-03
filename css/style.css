@@ -103,9 +103,13 @@ html{
 .custom-p{
     font-family: 'Dancing Script', cursive;
     width: 70%;
-    margin: 7rem auto 7rem;
+    margin: 3rem auto 7rem;
     padding-top: 10rem;
     padding-bottom: 10rem;
+}
+
+.custom-box-shadow{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .custom-img-size-cert{
@@ -181,6 +185,11 @@ footer{
 
     .textbox-on-img-footer{
         font-size: 3.5rem;
+    }
+
+    .medialap-border-grid{
+        display: flex;
+        flex-direction: column;
     }
 }
 
