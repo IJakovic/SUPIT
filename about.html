@@ -21,18 +21,24 @@
         <div id="header"></div>
     </header>
     <main class="about">
-        <section>
-            <img src="/img/about/kampus-iz-zraka-min-1.jpg" class="custom-img-size-big" alt="kampus-iz-zraka">
+        <div id="mySidenav" class="sidenav">
+            <a href="#C1" id="about">Naše vrijednosti <img src="img/about/nase-vrijednosti.png" class="custom-image-size-sidenav" alt="nase-vrijednosti"></a>
+            <a href="#C2" id="history">Povijest <img src="img/about/povijest.png" class="custom-image-size-sidenav" alt="povijest"></a>
+            <a href="#C3" id="organization">Algebra grupa <img src="img/about/algebra-grupa.png" class="custom-image-size-sidenav" alt="algebra-grupa"></a>
+            <a href="#C4" id="location">Kako do nas <img src="img/about/kako-do-nas.png" class="custom-image-size-sidenav" alt="kako-do-nass"></a>
+        </div>
+        <section class="content">
+            <img src="/img/about/kampus-iz-zraka-min-1.jpg" class="custom-img-size-campus" alt="kampus-iz-zraka">
         </section>
         <div>
-            <h1>O nama</h1>
+            <h1 class="fw-bold">O nama</h1>
             <hr>
         </div>
-        <div>
+        <div id="C1">
             <img src="/img/about/nase-vrijednosti.png" class="custom-icon-size-heading" alt="nase-vrijednosti">
-            <h2 id="C1">Naše vrijednosti</h2>
+            <h2 class="d-inline-flex heading-color-pink fw-bold">Naše vrijednosti</h2>
         </div>
-        <section>
+        <section class="content">
             <p>
                 Obećajemo pomoć u pronalasku onoga što voliš
                 raditi i da ćemo te poticati na izvrsnost -
@@ -50,7 +56,7 @@
                 brandu.
             </p>
         </section>
-        <section>
+        <section class="content">
             <div>
                 <h3>SPECIJALIZIRANO I KVALITETNO</h3>
                 <p>
@@ -101,11 +107,11 @@
                 </p>
             </div>
         </section>
-        <div>
+        <div id="C2"  class="content">
             <img src="/img/about/povijest.png" class="custom-icon-size-heading" alt="povijest">
-            <h2 id="C2">Povijest</h2>
+            <h2 class="d-inline-flex heading-color-pink fw-bold">Povijest</h2>
         </div>
-        <section>
+        <section class="content">
             <p>
                 Zajedno gradimo povijest Algebre. Počeli smo
                 prije gotovo dvadeset godina i s tobom
@@ -128,7 +134,7 @@
                 snove o budućnosti.
             </p>
         </section>
-        <section>
+        <section class="content">
             <div>
                 <h3></h3>
                 <p>
@@ -261,12 +267,12 @@
                     hrvatske i europske profesore.
                 </p>
             </div>
-        </section>
-        <div>
+        </section class="content">
+        <div id="C3">
             <img src="/img/about/algebra-grupa.png" class="custom-icon-size-heading" alt="algebra-grupa">
-            <h2 id="C3">Algebra grupa</h2>
+            <h2 class="d-inline-flex heading-color-pink fw-bold">Algebra grupa</h2>
         </div>
-        <section>
+        <section class="content">
             <p>
                 Algebra grupa je vodeći hrvatski i regionalni
                 privatni obrazovni sustav prisutan u 30 gradova
@@ -289,7 +295,7 @@
                 godine.
             </p>
         </section>
-        <section>
+        <section class="content">
             <div>
                 <h3>EC-COUNCIL ACCREDITED TRAINING CENTER - KREDITIRANI TRENING CENTAR</h3>
                 <img src="/img/about/EC-Council.png" class="custom-img-size-cert" alt="EC-Council">
@@ -323,15 +329,15 @@
                 <img src="/img/about/oracleLogo.png" class="custom-img-size-cert" alt="Oracle">
             </div>
         </section>
-        <div>
+        <div id="C4" class="content">
             <img src="/img/about/kako-do-nas.png" class="custom-icon-size-heading" alt="kako-do-nas">
-            <h2 id="C4">Kako do nas</h2>
+            <h2 class="d-inline-flex heading-color-pink fw-bold">Kako do nas</h2>
         </div>
-        <section>
+        <section class="content">
             <!-- bacground image /kakoDoNas.jpg -->
             <div>
                 <img src="/img/about/lokacija.png" class="custom-icon-size-section" alt="lokacija">
-                <h3>Lokacija</h3>
+                <h3 class="d-inline-flex fw-bold">Lokacija</h3>
                 <p>
                     Algebra se nalazi u okviru kampusa Hrvatskog
                     katoličkog sveučilišta (HKS) u Zagrebu, na
@@ -345,7 +351,7 @@
                     neposrednoj blizini.
                 </p>
                 <img src="/img/about/kako-do-nas2.png" class="custom-icon-size-section" alt="kako-do-nas">
-                <h3>Kako do nas?</h3>
+                <h3 class="d-inline-flex fw-bold">Kako do nas?</h3>
                 <p>
                     Algebra je smještena u zapadnom dijelu grada
                     Zagreba, na sto metara udaljenosti od
@@ -355,7 +361,7 @@
             </div>
             <div>
                 <img src="/img/about/javni-prijevoz.png" class="custom-icon-size-section" alt="javni-prijevoz">
-                <h3>Javni prijevoz</h3>
+                <h3 class="d-inline-flex fw-bold">Javni prijevoz</h3>
                 <p>
                     Od glavnog trga, Trga bana Jelačića,
                     udaljena je 6 tramvajskih stanica vožnje,
@@ -365,7 +371,7 @@
                     također u smjeru Črnomerca.
                 </p>
                 <img src="/img/about/osobno-vozilo.png" class="custom-icon-size-section" alt="osobno-vozilo">
-                <h3>Osobno vozilo</h3>
+                <h3 class="d-inline-flex fw-bold">Osobno vozilo</h3>
                 <p>
                     O informacije o dolasku automobilom iz
                     smjera Slavonska avenija dostupne su ovdje,
@@ -373,7 +379,7 @@
                     smjera Jadranske avenije.
                 </p>
                 <img src="/img/about/parking.png" class="custom-icon-size-section" alt="parking">
-                <h3>Parking</h3>
+                <h3 class="d-inline-flex fw-bold">Parking</h3>
                 <p>
                     Unutar kampusa posjetiteljima je na
                     raspolaganju otvoreni parking koji se

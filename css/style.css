@@ -9,30 +9,95 @@ html{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Header navbar*/
+/* Header navbar */
 .custom-navbar-bg-dark{
     background-color: black;
-}
-
-.custom-img-size-big{
-    width: 100%;
-}
-
-.custom-img-size-cert{
-    width: 10rem;
 }
 
 .custom-navbar-icon-size{
     width: 20px;
     height: 20px;
 }
+/* </Header navbar */
+
+/* Sidenav */
+#mySidenav a {
+    position: fixed;
+    left: -158px;
+    transition: 0.3s;
+    padding: 5px;
+    width: 231px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #c40f61;
+    border-radius: 0 8px 8px 0;
+    border-style: solid;
+    border-color: #c40f61;
+    border-width: 3px 3px 3px 0px;
+    text-align: end;
+    background-color: white;
+}
+
+.custom-image-size-sidenav {
+    width: 3rem;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#mySidenav a:hover {
+    left: 0;
+}
+
+#about {
+    top: 250px;
+}
+
+#history {
+    top: 305px;
+}
+
+#organization {
+    top: 360px;
+}
+
+#location {
+    top: 415px;
+}
+/* </Sidenav */
+
+.custom-img-size-campus{
+    width:100%;
+    height:40vh;
+    object-fit: cover;
+}
 
 .custom-icon-size-heading{
     width: 4rem;
 }
 
+.heading-color-pink{
+    color: #c40f61;
+}
+
+.custom-img-size-cert{
+    width: 10rem;
+}
+
 .custom-icon-size-section{
     width: 2rem;
+}
+
+.custom-text-shadow{
+    text-shadow: rgba(0, 0, 0, 0.15) 2.2px 2.2px 1.8px;
+}
+
+.custom-color-gradient{
+    background: linear-gradient(0deg, rgba(226,114,16,1) 0%, rgba(196,15,97,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bolder;
 }
 
 .custom-iframe-size{
@@ -41,55 +106,10 @@ html{
     border: 0;
 }
 
-/*
-nav ul{
-    display: flex;
-    align-items: center;
-}
-
-nav ul li{
-    font-size: 1.5rem;
-    font-weight: bold;
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0.75rem 2rem;
-}
-
-li a{
-    color: white;
-    text-decoration: none;
-    margin-left: 0.2rem;
-}
-
-li a:hover{
-    color: yellow;
-}
-
-ul .bookmarks{
-    justify-content: flex-end
-}
-
-.Alogo{
-    width: 75%;
-    padding: 1rem;
-}
-
-li img{
-    width: 1.75rem;
-    margin: 0;
-    padding: 0;
-}
-
-img{
-    width: 100%;
-}
-*/
-
 .video-container{
     margin: 0;
     padding: 0;
+    box-sizing: content-box;
 }
 
 .video-container video{
@@ -98,20 +118,44 @@ img{
     object-fit: cover;
 }
 
-.textboxOnVideo{
+.textbox-on-video{
     color: white;
     text-align: left;
-    font-size: 2rem;
+    font-size: 7rem;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-/* 
+footer{
+    position: relative;
+}
+
+.custom-img-size-footer{
+    width:100%;
+    height:35vh;
+    object-fit: cover;
+}
+
+.textbox-on-img-footer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bold;
+}
+
 @media only screen and (max-width: 768px) {
-    nav ul{
-        flex-direction: column;
+
+    #mySidenav{
+        display: none;
+    }
+
+    .textbox-on-img-footer{
+        font-size: 2rem;
     }
 }
-*/
