@@ -26,7 +26,7 @@ html{
 /* Sidenav */
 #mySidenav a {
     position: fixed;
-    left: -158px;
+    left: -181px;
     transition: 0.3s;
     padding: 5px;
     width: 231px;
@@ -45,7 +45,7 @@ html{
 .custom-image-size-sidenav {
     width: 3rem;
     margin-left: 15px;
-    margin-right: 15px;
+    margin-right: 5px;
 }
 
 #mySidenav a:hover {
@@ -103,17 +103,24 @@ html{
 .custom-p{
     font-family: 'Dancing Script', cursive;
     width: 70%;
-    margin: 3rem auto 7rem;
+    margin: 2rem auto 7rem;
     padding-top: 10rem;
     padding-bottom: 10rem;
 }
 
 .custom-box-shadow{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: white;
+}
+
+.custom-color-span{
+    color: rgb(123, 162, 235);
 }
 
 .custom-img-size-cert{
-    width: 10rem;
+    width: 50%;
+    display: block;
+    margin: auto;
 }
 
 .custom-icon-size-section{
@@ -132,10 +139,30 @@ html{
     font-weight: bolder;
 }
 
+.custom-background-image{
+    position: relative;
+    z-index: 1;
+    padding: 5rem;
+}
+.custom-background-image::before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('../img/about/backgroundLokacija.png') no-repeat;
+    background-size: cover;
+    opacity: 0.2;
+}
+
 .custom-iframe-size{
     width: 75%;
     height: 65vh;
-    border: 0;
+    border: 1px solid transparent;
+    border-image: linear-gradient(90deg, rgba(226,114,16,1) 0%, rgba(196,15,97,1) 100%);
+    border-image-slice: 1;
 }
 
 .video-container{
