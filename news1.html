@@ -13,26 +13,21 @@
     <link rel="apple-touch-icon" sizes="114x114" href="/img/Algebra-logo.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/img/Algebra-logo.png">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li><img class="Alogo" src="/img/Algebra-logo.png" alt="Algebra-logo"></li>
-                <li><img src="/img/navigation/home.png" alt="home-page"><a href="index.html"> Početna</a></li>
-                <li><img src="/img/navigation/about.png" alt="about-us-page"><a href="about.html"> O nama</a></li>
-                <li><img src="/img/navigation/news.png" alt="news-page"><a href="news.html"> Novosti</a></li>
-                <li><img src="/img/navigation/curriculum.png" alt="curriculum-page"><a href="curriculum.html"> Nastavni plan</a></li>
-                <li><img src="/img/navigation/contact.png" alt="contact-form"><a href="index.html"> Kontakt</a></li>
-            </ul>
-        </nav>
+      <!-- /components/navbar.html -->
+      <div id="header"></div>
     </header>
     <main class="news1">
-        <div>
-            <!-- <h4>28.08.2019.</h4>
-            <p>Student Josip Stanešić 12. je sistemaš svijeta i dobitnik medalje izvrsnosti na natjecanju WorldSkills Kazan 2019.</p> -->
-            <img src="/img/news/novost1.jpg" alt="novost1">
-        </div>
+        <section class="content">
+            <img src="/img/news/novost1.jpg" class="custom-img-size-news" alt="novost1">
+            <div class="textbox-on-img-header custom-text-shadow">
+                <p>Student Josip Stanešić 12. je sistemaš svijeta i dobitnik medalje izvrsnosti na natjecanju WorldSkills Kazan 2019.</p>
+            </div>
+        </section>
         <section>
             <h1>WorldSkills natjecanje - Kazan 2019.</h1>
             <hr>
@@ -55,16 +50,25 @@
                 16.mjestu u vještini IT Software Solutions for Business.
             </p>
             <div>
-                <img src="/img/news/novost1/galerija1.jpg" alt="galerija1">
-                <img src="/img/news/novost1/galerija2.jpg" alt="galerija2">
-                <video controls>
-                    <source src="/video/worldskills.mp4" type="video/mp4">
-                </video>
+                <div class="row">
+                    <div class="col"><img src="/img/news/novost1/galerija1.jpg" width="40%" alt="galerija1"></div>
+                    <div class="col"><img src="/img/news/novost1/galerija2.jpg" width="40%" alt="galerija2"></div>
+                </div>
+                <div class="row">
+                    <video class="col" controls width="20%">
+                        <source src="/video/worldskills.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
         </section>
     </main>
     <footer>
-        <img src="/img/zaiskri-bg.jpg" alt="zaiskri">
+        <!-- components/footer.html -->
+        <div id="footer"></div>
     </footer>
+    <script src="js/typed.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

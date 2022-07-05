@@ -6,9 +6,15 @@
     box-sizing: border-box;
 }
 
-html{
+html, body{
+    height: 100%;
     font-size: 62.5%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
 }
 
 /* Header navbar */
@@ -23,7 +29,11 @@ html{
 /* </Header navbar */
 
 .news{
-    margin-top: 80px;
+    margin-top: 8rem;
+}
+
+.news1{
+    margin-top:5rem;
 }
 
 /* Sidenav */
@@ -90,20 +100,27 @@ html{
     width:100%;
     height:40vh;
     object-fit: cover;
-} 
+}
+
+.custom-img-size-news{
+    width:100%;
+    height:37vh;
+    object-fit: cover;
+    object-position: 100% 0;
+}
 
 .custom-icon-size-heading{
     width: 4rem;
 }
 
 .custom-mt-section{
-    margin-top: 10rem;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
 }
 
 .custom-img-size-article{
     position: relative;
     text-align: center;
-    margin-bottom: 10rem;
 }
 
 .custom-img-size-circle{
@@ -113,6 +130,17 @@ html{
     border-radius: 50%;
     vertical-align: middle;
     padding: 2rem;
+}
+
+.textbox-on-img-header{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: left;
+    font-size: 3rem;
+    font-weight: bolder;
 }
 
 .textbox-on-img-circle{
@@ -171,6 +199,16 @@ html{
     font-weight: bolder;
 }
 
+.custom-px-5{
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.custom-py-5{
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+}
+
 .custom-background-image{
     position: relative;
     z-index: 1;
@@ -190,7 +228,7 @@ html{
 }
 
 .custom-iframe-size{
-    width: 75%;
+    width: 80%;
     height: 65vh;
     border: 3px solid transparent;
     border-image: linear-gradient(90deg, rgba(226,114,16,1) 0%, rgba(196,15,97,1) 100%);
@@ -200,7 +238,7 @@ html{
 .video-container{
     margin: 0;
     padding: 0;
-    box-sizing: content-box;
+    /* box-sizing: content-box; */
 }
 
 .video-container video{
@@ -222,11 +260,12 @@ html{
 /* Footer image text */
 footer{
     position: relative;
+    margin-top: auto;
 }
 
 .custom-img-size-footer{
     width:100%;
-    height:35vh;
+    height:34vh;
     object-fit: cover;
 }
 
@@ -252,6 +291,11 @@ footer{
         display: flex;
         flex-direction: column;
     }
+
+    .custom-py-5{
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -262,5 +306,23 @@ footer{
 
     .textbox-on-img-footer{
         font-size: 2.5rem;
+    }
+
+    .custom-background-image{
+        padding: 0;
+    }
+
+    .custom-px-5{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .custom-py-5{
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .textbox-on-img-header{
+        font-size: 2rem;
     }
 }
