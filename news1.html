@@ -12,8 +12,8 @@
     <link rel="apple-touch-icon" sizes="72x72" href="/img/Algebra-logo.png">
     <link rel="apple-touch-icon" sizes="114x114" href="/img/Algebra-logo.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/img/Algebra-logo.png">
-    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <header>
@@ -29,9 +29,10 @@
             </div>
         </section>
         <section>
-            <h1>WorldSkills natjecanje - Kazan 2019.</h1>
-            <hr>
-            <p>
+            <div class="d-flex justify-content-center mt-5 mb-5">
+                <h1 class="fw-bold custom-border-heading">WorldSkills natjecanje - Kazan 2019.</h1>
+            </div>
+            <p class="fs-2 w-75 m-auto pb-5">
                 Nakon godinu dana priprema za natjecanje WorldSkills
                 Kazan 2019 na kojem je sudjelovalo 1300 natjecatelja iz
                 cijelog svijeta, trud se itekako isplatio. Josip,
@@ -49,17 +50,59 @@
                 za programsko inženjerstvo - Goranu Đambiću na osvojenom
                 16.mjestu u vještini IT Software Solutions for Business.
             </p>
-            <div class="container">
+            <div class="container mt-5 w-75">
                 <div class="row">
-                    <div class="col"><img src="/img/news/novost1/galerija1.jpg" alt="galerija1"></div>
-                    <div class="col"><img src="/img/news/novost1/galerija2.jpg" alt="galerija2"></div>
+                    <div class="col-md mt-5">
+                        <figure>
+                            <img class="img-zoom" onclick="openLightbox();toSlide(1)" src="/img/news/novost1/galerija1.jpg" alt="galerija1">
+                        </figure>
+                    </div>
+                    <div class="col-md mt-5">
+                        <figure>
+                            <img class="img-zoom" onclick="openLightbox();toSlide(2)" src="/img/news/novost1/galerija2.jpg" alt="galerija2">
+                        </figure>
+                    </div>
                 </div>
                 <div class="row">
-                    <video class="col" controls>
+                    <video class="col-md my-5" controls>
                         <source src="/video/worldskills.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
+            <!-- <Lightbox> -->
+                <div class="L-row">
+                    <div class="L-col">
+                        <img src="/img/news/novost1/galerija1.jpg" onclick="openLightbox();toSlide(1)" class="hover-shadow preview">
+                    </div>
+                    <div class="L-col">
+                        <img src="/img/news/novost1/galerija2.jpg" onclick="openLightbox();toSlide(2)" class="hover-shadow preview">
+                    </div>
+                </div>
+
+
+
+                <div id="Lightbox" class="modal">
+                    <span class="close pointer" onclick="closeLightbox()">&times;</span>
+                    <div class="modal-content">
+                      <div class="slide">
+                          <img src="/img/news/novost1/galerija1.jpg" class="image-slide" alt="Toy car on the road." />
+                      </div>
+                      <div class="slide">
+                          <img src="/img/news/novost1/galerija2.jpg" class="image-slide" alt="Toy car exploring offroad." />
+                      </div>    
+                      <a class="previous" onclick="changeSlide(-1)">&#10094;</a>
+                      <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                      <div class="dots">
+                        <div class="L-col">
+                          <img src="/img/news/novost1/galerija1.jpg" class="modal-preview hover-shadow" onclick="toSlide(1)" alt="Toy car on the road" />
+                        </div>
+                        <div class="L-col">
+                          <img src="/img/news/novost1/galerija2.jpg" class="modal-preview hover-shadow" onclick="toSlide(2)" alt="Toy car exploring offroad." />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            <!-- </Lightbox> -->
         </section>
     </main>
     <footer>
