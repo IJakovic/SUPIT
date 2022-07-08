@@ -13,11 +13,11 @@
     <link rel="apple-touch-icon" sizes="114x114" href="/img/Algebra-logo.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/img/Algebra-logo.png">
     <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/fancybox.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <header>
-        <nav>
       <!-- /components/navbar.html -->
       <div id="header"></div>
     </header>
@@ -54,12 +54,16 @@
                 <div class="row">
                     <div class="col-md mt-5">
                         <figure>
-                            <img class="img-zoom" onclick="openLightbox();toSlide(1)" src="/img/news/novost1/galerija1.jpg" alt="galerija1">
+                            <a data-fancybox="gallery" data-src="/img/news/novost1/galerija1.jpg">
+                                <img class="img-zoom" src="/img/news/novost1/galerija1.jpg" alt="galerija1">
+                            </a>
                         </figure>
                     </div>
                     <div class="col-md mt-5">
                         <figure>
-                            <img class="img-zoom" onclick="openLightbox();toSlide(2)" src="/img/news/novost1/galerija2.jpg" alt="galerija2">
+                            <a data-fancybox="gallery" data-src="/img/news/novost1/galerija2.jpg">
+                                <img class="img-zoom" src="/img/news/novost1/galerija2.jpg" alt="galerija2">
+                            </a>
                         </figure>
                     </div>
                 </div>
@@ -69,49 +73,15 @@
                     </video>
                 </div>
             </div>
-            <!-- <Lightbox> -->
-                <div class="L-row">
-                    <div class="L-col">
-                        <img src="/img/news/novost1/galerija1.jpg" onclick="openLightbox();toSlide(1)" class="hover-shadow preview">
-                    </div>
-                    <div class="L-col">
-                        <img src="/img/news/novost1/galerija2.jpg" onclick="openLightbox();toSlide(2)" class="hover-shadow preview">
-                    </div>
-                </div>
-
-
-
-                <div id="Lightbox" class="modal">
-                    <span class="close pointer" onclick="closeLightbox()">&times;</span>
-                    <div class="modal-content">
-                      <div class="slide">
-                          <img src="/img/news/novost1/galerija1.jpg" class="image-slide" alt="Toy car on the road." />
-                      </div>
-                      <div class="slide">
-                          <img src="/img/news/novost1/galerija2.jpg" class="image-slide" alt="Toy car exploring offroad." />
-                      </div>    
-                      <a class="previous" onclick="changeSlide(-1)">&#10094;</a>
-                      <a class="next" onclick="changeSlide(1)">&#10095;</a>
-                      <div class="dots">
-                        <div class="L-col">
-                          <img src="/img/news/novost1/galerija1.jpg" class="modal-preview hover-shadow" onclick="toSlide(1)" alt="Toy car on the road" />
-                        </div>
-                        <div class="L-col">
-                          <img src="/img/news/novost1/galerija2.jpg" class="modal-preview hover-shadow" onclick="toSlide(2)" alt="Toy car exploring offroad." />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            <!-- </Lightbox> -->
         </section>
     </main>
     <footer>
         <!-- components/footer.html -->
         <div id="footer"></div>
     </footer>
-    <script src="js/typed.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/fancybox.umd.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

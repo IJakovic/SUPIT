@@ -12,31 +12,26 @@
     <link rel="apple-touch-icon" sizes="72x72" href="/img/Algebra-logo.png">
     <link rel="apple-touch-icon" sizes="114x114" href="/img/Algebra-logo.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/img/Algebra-logo.png">
+    <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><img class="Alogo" src="/img/Algebra-logo.png" alt="Algebra-logo"></li>
-                <li><img src="/img/navigation/home.png" alt="home-page"><a href="index.html"> Početna</a></li>
-                <li><img src="/img/navigation/about.png" alt="about-us-page"><a href="about.html"> O nama</a></li>
-                <li><img src="/img/navigation/news.png" alt="news-page"><a href="news.html"> Novosti</a></li>
-                <li><img src="/img/navigation/curriculum.png" alt="curriculum-page"><a href="curriculum.html"> Nastavni plan</a></li>
-                <li><img src="/img/navigation/contact.png" alt="contact-form"><a href="index.html"> Kontakt</a></li>
-            </ul>
-        </nav>
+      <!-- /components/navbar.html -->
+      <div id="header"></div>
     </header>
-    <main class="news2">
-        <div>
-            <!-- <h4>22.07.2019.</h4>
-            <p>Nagrađujemo izvrsnost: Objavljujemo dobitnike stipendijskog natječaja šk.god. 2018./2019.!</p> -->
-            <img src="/img/news/novost2.jpg" alt="novost2">
-        </div>
+    <main class="news1">
+        <section class="content">
+            <img src="/img/news/novost2.jpg" class="custom-img-size-news" alt="novost2">
+            <div class="textbox-on-img-header custom-text-shadow">
+                <p>Nagrađujemo izvrsnost: Objavljujemo dobitnike stipendijskog natječaja šk.god. 2018./2019.!</p>
+            </div>
+        </section>
         <section>
-            <h1>Stipendijski natječaj šk.god. 2018./2019.</h1>
-            <hr>
-            <p>
+            <div class="d-flex justify-content-center mt-5 mb-5">
+                <h1 class="fw-bold custom-border-heading">Stipendijski natječaj šk.god. 2018./2019.</h1>
+            </div>
+            <p class="fs-2 w-75 m-auto pb-5">
                 Nakon velikog broja prijava koje smo primili, detaljnom
                 analizom i provjerom utvrdili smo dobitnike ovogodišnjeg
                 stipendijskog natječaja za maturante! Stipendiju u
@@ -61,7 +56,11 @@
         </section>
     </main>
     <footer>
-        <img src="/img/zaiskri-bg.jpg" alt="zaiskri">
+        <!-- components/footer.html -->
+        <div id="footer"></div>
     </footer>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
