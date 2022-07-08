@@ -14,6 +14,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/img/Algebra-logo.png">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
 </head>
 <body>
     <header>
@@ -24,85 +25,18 @@
         <div class="d-flex justify-content-center mt-5 mb-5">
             <h1 class="fw-bold custom-border-heading">Nastavni plan</h1>
         </div>
-        <!-- <form action="http://www.fulek.com/VUA/SUPIT/GetNastavniPlan" method="get">
-            <table>
-                <thead>
-                    <tr>
-                        <td>
-                            <label for="txt-naziv-kolegija">Naziv kolegija:</label>
-                        </td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <input type="text" name="naziv-kolegija" id="txt-naziv-kolegija" autocomplete="off" autofocus>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </form> -->
-        <div class="container mx-auto pb-64 mt-14">
-            <div class="flex flex-wrap justify-center">
-
-                <!-- MAIN BLOK -->
-                <div class="w-full md:w-5/12 px-12 md:px-4 ml-auto mr-auto md:mt-64">
-                    <div class="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white"><i class="fas fa-graduation-cap text-xl"></i></div>
-                    <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-500">
-                        <div class="relative w-full mb-3">
-                            <label class="block uppercase text-white text-xs font-bold mb-2" for="full-name">Nastavni kolegij</label>
-                            <input id="curriculum-search" type="text" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Npr. Standardi u primjeni internetske tehnologije" style="transition: all 0.15s ease 0s;">
-                        </div>
-                    </p>                    
-                </div>
-                <!-- // -->
-
-                <!-- BLOK PRIKAZA -->
-                <div class="w-full md:w-4/12 px-4 mr-auto ml-auto mt-32 relative">
-
-                    <!-- APPEND TABLICA -->
-                    <table id="curriculum-table" class="table-fill">
-                        <thead>
-                        <tr>
-                        <th class="text-left">Kolegij</th>
-                        <th class="text-left">ECTS</th>
-                        <th class="text-left">Sati</th>
-                        <th class="text-left">P</th>
-                        <th class="text-left">V</th>
-                        <th class="text-left">Tip</th>
-                        <th class="text-left"></th>
-                        </tr>
-                        </thead>
-                        <tbody id="cTable-body" class="table-hover">
-                      
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                              <td>Ukupno</td>
-                              <td><span id="totalECTS">0</span></td>
-                              <td><span id="totalHours">0</span></td>
-                              <td colspan="4"></td>
-                            </tr>
-                          </tfoot>
-                    </table>
-                    <!-- // -->
-
-                    <!-- IKONICA -->
-                    <i id="curriculum-icon" class="fas fa-chalkboard-teacher text-gray-800" style="font-size: 55em; position: absolute; top: -150px; right: -100%; left: auto; opacity: 0.8;"></i> 
-                    <!-- // -->
-                    
-                </div>
-                <!-- // -->
-
-            </div>
+        <div class="ui-widget">
+            <label for="curriculumSearch" class="form-label"> Naziv kolegija</label>
+            <input type="text" name="naziv-kolegija" id="curriculumSearch" placeholder="Npr. Standardi u primjeni internetske tehnologije" autocomplete="on" autofocus>
         </div>
+
     </main>
     <footer>
         <!-- components/footer.html -->
         <div id="footer"></div>
     </footer>
-    <script src="js/typed.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/main.js"></script>
 </body>
