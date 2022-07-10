@@ -25,72 +25,36 @@
         <div class="d-flex justify-content-center mt-5 mb-5">
             <h1 class="fw-bold custom-border-heading">Nastavni plan</h1>
         </div>
-        <!-- <div class="ui-widget">
-            <label for="curriculumSearch" class="form-label"> Naziv kolegija</label>
-            <input type="text" name="naziv-kolegija" id="curriculumSearch" placeholder="Npr. Standardi u primjeni internetske tehnologije" autocomplete="on" autofocus>
-        </div> -->
 
-<!-- ---------------------------------------- -->
-
-<section class="py-26 bg-gray-700 overflow-hidden">
-    <div class="container mx-auto pb-64 mt-14">
-        <div class="flex flex-wrap justify-center">
-
-            <!-- MAIN BLOK -->
-            <div class="w-full md:w-5/12 px-12 md:px-4 ml-auto mr-auto md:mt-64">
-                <div class="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white"><i class="fas fa-graduation-cap text-xl"></i></div>
-                <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-500">
-                    <div class="relative w-full mb-3">
-                        <label class="block uppercase text-white text-xs font-bold mb-2" for="full-name">Nastavni kolegij</label>
-                        <input id="curriculum-search" type="text" class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full" placeholder="Npr. Standardi u primjeni internetske tehnologije" style="transition: all 0.15s ease 0s;">
-                    </div>
-                </p>                    
+        <div class="d-md-flex justify-content-center gap-5 m-5">
+            <div class="ui-widget m-auto w-50">
+                <label for="curriculum-search" class="form-label d-block fs-4">Naziv kolegija</label>
+                <input type="text" name="naziv-kolegija" id="curriculum-search" class="form-control" placeholder="Npr. Standardi u primjeni internetske tehnologije" autofocus>
             </div>
-            <!-- // -->
-
-            <!-- BLOK PRIKAZA -->
-            <div class="w-full md:w-4/12 px-4 mr-auto ml-auto mt-32 relative">
-
-                <!-- APPEND TABLICA -->
-                <table id="curriculum-table" class="table-fill">
-                    <thead>
+            <table id="curriculum-table" class="table table-sm table-striped table-hover fs-4 m-auto w-50">
+                <thead>
+                  <tr>
+                    <th scope="col">Kolegij</th>
+                    <th scope="col">ECTS</th>
+                    <th scope="col">Sati</th>
+                    <th scope="col">P</th>
+                    <th scope="col">V</th>
+                    <th scope="col">Tip</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody id="curriculum-table-body">
+                </tbody>
+                <tfoot id="curriculum-table-foot" class="table-dark">
                     <tr>
-                    <th class="text-left">Kolegij</th>
-                    <th class="text-left">ECTS</th>
-                    <th class="text-left">Sati</th>
-                    <th class="text-left">P</th>
-                    <th class="text-left">V</th>
-                    <th class="text-left">Tip</th>
-                    <th class="text-left"></th>
+                        <td>Ukupno</td>
+                        <td id="totalECTS">0</td>
+                        <td id="totalHours">0</td>
+                        <td colspan="4"></td>
                     </tr>
-                    </thead>
-                    <tbody id="cTable-body" class="table-hover">
-                  
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                          <td>Ukupno</td>
-                          <td><spna id="totalECTS">0</spna></td>
-                          <td><spna id="totalHours">0</spna></td>
-                          <td colspan="4"></td>
-                        </tr>
-                      </tfoot>
-                </table>
-                <!-- // -->
-
-                <!-- IKONICA -->
-                <i id="curriculum-icon" class="fas fa-chalkboard-teacher text-gray-800" style="font-size: 55em; position: absolute; top: -150px; right: -100%; left: auto; opacity: 0.8;"></i> 
-                <!-- // -->
-                
-            </div>
-            <!-- // -->
-
+                </tfoot>
+              </table>
         </div>
-    </div>
-</section>
-
-
-<!-- ----------------------------------------------- -->
     </main>
     <footer>
         <!-- components/footer.html -->

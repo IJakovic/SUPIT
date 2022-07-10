@@ -1,126 +1,113 @@
 $(document).ready(function () {
 
-    //Load components
+    /******Load components******/
     $("#header").load("components/navbar.html"); 
     $("#footer").load("components/footer.html"); 
 
-    //Fancybox - image gallery
+    /******Fancybox - image gallery******/
     if (document.URL.includes("news1.html")) {
       Fancybox.bind('[data-fancybox="gallery"]', {
         infinite: true
       });
     }
-    //Curriculum
-/*
-    $('#curriculumSearch').autocomplete({
-      source: "http://www.fulek.com/VUA/SUPIT/GetNastavniPlan",
-      select: function(event, ui){
-        $("#curriculumSearch").val(ui.item.label);
 
-        return false;
-      }
-  });
-*/
-
-    function getAllCurriculums() {
-          let response = $.ajax({
-              type: "GET",
-              url: "http://www.fulek.com/VUA/SUPIT/GetNastavniPlan",
-              dataType: "json",
-              error: function (xhr, ajaxOptions, thrownError) {
-                  alert(xhr.status);
-                  alert(thrownError);
-              }
-          });
-          return response.responseJSON;
-      }
-
-      function getCurriculum(id) {
-        let response = $.ajax({
-            type: "GET",
-            url: "http://www.fulek.com/VUA/supit/GetKolegij/" + id,
-            dataType: "json",
-            error: function (xhr, ajaxOptions, thrownError) {
-                alert(xhr.status);
-                alert(thrownError);
-            }
-        });
-        return response.responseJSON;
-    }
-
-    removeCurriculumClick(element)
-    {
-        let currentECTS = parseInt($("#totalECTS").html()); //TRENUTNI ECTS BODOVI
-        let currentHours = parseInt($("#totalHours").html()); //TRENUTNI SATI
- 
-        let elementTr = $(element).parent().parent()[0]; //UZMI TR OD THIS ELEMENTA
-        let gECTS = parseInt(elementTr.cells[1].innerText); //OD UZETOG TR-A UZMI ECTS BODOVE TE IH PRETVORI U INT
-        let gHours = parseInt(elementTr.cells[2].innerText); //OD UZETOG TR-A UZMI SATE TE IH PRETVORI U INT
-        
-        $(elementTr).remove(); //IZBRIŠI REDAK U TABLICI
-
-        $("#totalECTS").html(currentECTS-gECTS); //ZAPIŠI ECTS-OVE NAKON ODUZIMANJA IBRISANOG TR-A
-        $("#totalHours").html(currentHours-gHours); //ZAPIŠI SATE NAKON ODUZIMANJA IBRISANOG TR-A
-    }
-
+    /******Curriculum page******/
     $("#curriculum-table").hide();
+    
+    var urlGetAllCurriculums = 'http://www.fulek.com/VUA/SUPIT/GetNastavniPlan';
+    var xmlhttpGetAllSubjects = new XMLHttpRequest();
 
-    //DOHVATI KOLEGIJE
-    let curriculum = new getCurriculum();
-    let arrayOfCurriculums = curriculum.getAllCurriculums();
-    //--//
+    xmlhttpGetAllSubjects.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var allSubjects = JSON.parse(this.responseText);
+        //console.log(allSubjects);
+    
+        //autocomplete naziva kolegija
+        $('#curriculum-search').autocomplete({
+          source: allSubjects,
+          minLength: 1,
+          select: function(event, ui){
+            event.preventDefault();
+            $("#curriculum-search").val(ui.item.label);
+          }
+        })
+    
+        //prikaz detalja pojedinog kolegija
+          $('#curriculum-search').on('autocompleteselect', function (e, ui) {
+            var id =  ui.item.value;
+            var urlGetCurriculum = `http://www.fulek.com/VUA/supit/GetKolegij/${id}`;
+            var xmlhttpGetSubject = new XMLHttpRequest();
 
-    //NA AUTO COMPLETE
-    $( "#curriculum-search").autocomplete({
-        minLength: 0,
-        source: arrayOfCurriculums,
-        select: function(event, ui) { 
-            $('#curriculum-search').val(ui.item.label);
-            $('#curriculum-search').attr('data-id', ui.item.value);
-            let totalECTS = parseInt($("#totalECTS").html());
-            let totalHours = parseInt($("#totalHours").html());
-            
+            xmlhttpGetSubject.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                var mySubject = JSON.parse(this.responseText);
+                //template za pojedini kolegij
+                $("#curriculum-table-body").append(
+                    `
+                      <tr id="curriculum-table-row">
+                          <td scope="row">${mySubject.kolegij}</td>
+                          <td id="ects">${mySubject.ects}</td>
+                          <td id="hours">${mySubject.sati}</td>
+                          <td>${mySubject.predavanja}</td>
+                          <td>${mySubject.vjezbe}</td>
+                          <td>${mySubject.tip}</td>
+                          <td><button type="button" id="btn-delete" class="btn btn-outline-danger">Obriši</button></td>
+                      </tr>
+                    `
+                );
+                
+                if ($('#curriculum-table-row').length > 0) {
+                    $("#curriculum-table").show();
+                  }
+    
+                //sum ects i sati
+                var totalECTS = 0;
+                var totalHours = 0;
+    
+                $('#curriculum-table-body tr#curriculum-table-row').each(function() {
+                  var sumECTS = +$(this).find("td#ects").text();
+                  totalECTS += sumECTS;
+                  var sumHours =+ $(this).find("td#hours").text();
+                  totalHours += sumHours;
+                })
+                //console.log("test sum nakon dodavanja:" + sum);
+                $('#totalECTS').text(totalECTS);
+                $('#totalHours').text(totalHours);
+              }
+    
+              // brisanje tr - (pojedinog kolegija)
 
-            let specificCurriculum = curriculum.getAllCurriculums(parseInt(ui.item.value));
-            totalECTS += specificCurriculum.ects;
-            totalHours += specificCurriculum.sati;
-            $("#cTable-body").append(`
-            <tr>
-                <td class="text-left">${specificCurriculum.kolegij}</td>
-                <td class="text-left">${specificCurriculum.ects}</td>
-                <td class="text-left">${specificCurriculum.sati}</td>
-                <td class="text-left">${specificCurriculum.predavanja}</td>
-                <td class="text-left">${specificCurriculum.vjezbe}</td>
-                <td class="text-left">${specificCurriculum.tip}</td>
-                <td class="text-left">
-                <button class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 removeCurriculum" type="button" style="transition: all .15s ease">
-                Obriši
-                </button>
-              </td>
-            </tr>
-            `);
-            
-            $("#totalECTS").html(totalECTS);
-            $("#totalHours").html(totalHours);
+              $('#curriculum-table-row').on('click', 'button', function(){
+                $(this).parent().parent().remove();
 
-            $("#curriculum-icon").hide();
-            $("#curriculum-table").show();
-
-
-            return false;
-        },
-        response: function(event, ui) {
-            if (!ui.content.length) {
-                var noResult = { value:"",label:"Kolegij ne postoji u bazi!" };
-                ui.content.push(noResult);
-            }
-        }
-    });
-    //--//
-
-    //MAKNI KOLEGIJ
-    $(document).on("click", ".removeCurriculum", (e) => curriculum.removeCurriculumClick(e.target));
-    //--//
+                if ($('#curriculum-table-row').length == 0) {
+                    $("#curriculum-table").hide();
+                }
+    
+                var updateECTS = 0;
+                var updateHours = 0;
+    
+                $('#curriculum-table-body tr#curriculum-table-row').each(function() {
+                  var sum_ects = parseInt($(this).find("td#ects").text(), 10);
+                  updateECTS += sum_ects;
+                  var sum_sati = parseInt($(this).find("td#hours").text(), 10);
+                  updateHours += sum_sati;
+                  //console.log('kliknuti', sum_ects)
+                })
+                //console.log("test sum nakon dodavanja:" + sum);
+                $('#totalECTS').text(updateECTS);
+                $('#totalHours').text(updateHours);
+              });
+    
+            };
+            xmlhttpGetSubject.open("GET", urlGetCurriculum, true);
+            xmlhttpGetSubject.send();
+    
+          });
+      }
+    };
+    xmlhttpGetAllSubjects.open("GET", urlGetAllCurriculums, true);
+    xmlhttpGetAllSubjects.send();
 
 
 });
