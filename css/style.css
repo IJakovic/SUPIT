@@ -32,7 +32,7 @@ body{
     margin-top: 8rem;
 }
 
-.news1{
+.news-article{
     margin-top:5rem;
 }
 
@@ -235,6 +235,8 @@ body{
     border-image-slice: 1;
 }
 
+
+
 /* Img zoom && Lightbox */
 figure{
     margin: 0;
@@ -278,7 +280,7 @@ figure:hover .img-zoom {
 .textbox-on-video{
     color: white;
     text-align: left;
-    font-size: 7rem;
+    font-size: 6.5rem;
     position: absolute;
     top: 50%;
     left: 50%;

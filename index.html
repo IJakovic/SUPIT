@@ -18,7 +18,7 @@
 <body>
     <header>
       <!-- /components/navbar.html -->
-      <div id="header"></div>
+      <div id="navbar"></div>
     </header>
     <main>
         <div class="video-container">
@@ -26,16 +26,17 @@
                 <source src="/video/typingOnlaptop.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="textbox-on-video">
+            <!-- <div id="typed-strings" class="textbox-on-video">
                 <span class="custom-text-shadow">Budi izvrstan u onom što voliš.</span>
                 <br>
                 <span class="custom-color-gradient custom-text-shadow">ZAISKRI.</span>
-            </div>
+            </div> -->
+            <div id="typed-string" class="textbox-on-video"></div>
         </div>
     </main>
-    <script src="js/typed.js"></script>
+    <script src="js/core.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

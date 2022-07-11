@@ -1,3 +1,4 @@
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
     <div class="container-fluid ms-5">
       <a class="navbar-brand me-5" href="index.html">
@@ -26,9 +27,52 @@
           </li>
           <li class="nav-item d-flex align-items-center">
             <img src="/img/navigation/contact.png" class="custom-navbar-icon-size" alt="contact-form">
-            <a class="nav-link fs-4 fw-bold ms-1" href="">Kontakt</a>
+            <a class="nav-link fs-4 fw-bold ms-1" href="#contactModal" data-bs-toggle="modal" data-bs-target="#contactModal">Kontakt</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+<!-- Modal -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="d-inline d-flex align-items-center gap-3">
+                    <img src="/img/navigation/contact.png" class="custom-navbar-icon-size" alt="contact-form">
+                    <h1 class="modal-title" id="exampleModalLabel">Kontaktirajte nas</h1>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body fs-3">
+                <form action="http://www.fulek.com/VUA/SUPIT/ContactUs" method="POST">
+                    <div class="mb-3">
+                        <label for="inputFullName" class="form-label">Puno ime:</label>
+                        <input type="fullName" name="name" class="form-control fs-3" id="inputFullName" aria-describedby="emailHelp" required>
+                      </div>
+                    <div class="mb-3">
+                      <label for="inputEmail" class="form-label">E-mail:</label>
+                      <input type="email" name="email" class="form-control fs-3" id="inputEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Važnost poruke:</label>
+                        <select name="importance" class="form-select fs-3">
+                            <option value="visoka">Visoka</option>
+                            <option value="niska">Niska</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formControlTextarea" class="form-label">Vaša poruka:</label>
+                        <textarea name="message" class="form-control fs-4" id="formControlTextarea" rows="5" required></textarea>
+                      </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" name="newsletter" class="form-check-input" id="cbNewsletter">
+                        <label class="form-check-label" for="cbNewsletter">| Primaj newsletter</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary fs-3">Pošalji</button>
+                    <button type="button" class="btn btn-danger fs-3" data-bs-dismiss="modal">Odustani</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

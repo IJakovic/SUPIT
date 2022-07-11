@@ -1,113 +1,132 @@
 $(document).ready(function () {
 
     /******Load components******/
-    $("#header").load("components/navbar.html"); 
-    $("#footer").load("components/footer.html"); 
+    $("#navbar").load("components/navbar.html");
+    $("#footer").load("components/footer.html");
+
+    /******Typing animation******/
+    if (document.URL.includes("index.html")) {
+        let typedString =  document.getElementById('typed-string'); 
+
+        let typewriter = new Typewriter(typedString, {
+            loop: false
+        });
+
+        typewriter
+            .pauseFor(500)
+            .typeString('<span class="custom-text-shadow">Budi izvrstan u onom što vidiš.</span>')
+            .pauseFor(300)
+            .deleteChars(6)
+            .typeString('<span class="custom-text-shadow">voliš.</span>')
+            .pauseFor(300)
+            .typeString('</br><span class="custom-color-gradient custom-text-shadow">ZAISKRI</span>.')
+            .start();
+    }
 
     /******Fancybox - image gallery******/
     if (document.URL.includes("news1.html")) {
-      Fancybox.bind('[data-fancybox="gallery"]', {
-        infinite: true
-      });
+        Fancybox.bind('[data-fancybox="gallery"]', {
+            infinite: true
+        });
     }
 
     /******Curriculum page******/
-    $("#curriculum-table").hide();
-    
-    var urlGetAllCurriculums = 'http://www.fulek.com/VUA/SUPIT/GetNastavniPlan';
-    var xmlhttpGetAllSubjects = new XMLHttpRequest();
+    if (document.URL.includes("curriculum.html")) {
+        $("#curriculum-table").hide();
 
-    xmlhttpGetAllSubjects.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        var allSubjects = JSON.parse(this.responseText);
-        //console.log(allSubjects);
-    
-        //autocomplete naziva kolegija
-        $('#curriculum-search').autocomplete({
-          source: allSubjects,
-          minLength: 1,
-          select: function(event, ui){
-            event.preventDefault();
-            $("#curriculum-search").val(ui.item.label);
-          }
-        })
-    
-        //prikaz detalja pojedinog kolegija
-          $('#curriculum-search').on('autocompleteselect', function (e, ui) {
-            var id =  ui.item.value;
-            var urlGetCurriculum = `http://www.fulek.com/VUA/supit/GetKolegij/${id}`;
-            var xmlhttpGetSubject = new XMLHttpRequest();
+        //Info:
+        //https://www.w3schools.com/xml/ajax_intro.asp
+        //https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+        var urlGetAllCurriculums = 'http://www.fulek.com/VUA/SUPIT/GetNastavniPlan';
+        var xmlhttpGetAllSubjects = new XMLHttpRequest();
+        xmlhttpGetAllSubjects.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var allSubjects = JSON.parse(this.responseText);
 
-            xmlhttpGetSubject.onreadystatechange = function() {
-              if (this.readyState == 4 && this.status == 200) {
-                var mySubject = JSON.parse(this.responseText);
-                //template za pojedini kolegij
-                $("#curriculum-table-body").append(
-                    `
-                      <tr id="curriculum-table-row">
-                          <td scope="row">${mySubject.kolegij}</td>
-                          <td id="ects">${mySubject.ects}</td>
-                          <td id="hours">${mySubject.sati}</td>
-                          <td>${mySubject.predavanja}</td>
-                          <td>${mySubject.vjezbe}</td>
-                          <td>${mySubject.tip}</td>
-                          <td><button type="button" id="btn-delete" class="btn btn-outline-danger">Obriši</button></td>
-                      </tr>
-                    `
-                );
-                
-                if ($('#curriculum-table-row').length > 0) {
-                    $("#curriculum-table").show();
-                  }
-    
-                //sum ects i sati
-                var totalECTS = 0;
-                var totalHours = 0;
-    
-                $('#curriculum-table-body tr#curriculum-table-row').each(function() {
-                  var sumECTS = +$(this).find("td#ects").text();
-                  totalECTS += sumECTS;
-                  var sumHours =+ $(this).find("td#hours").text();
-                  totalHours += sumHours;
+                //Autocomplete on input field
+                $('#curriculum-search').autocomplete({
+                    source: allSubjects,
+                    minLength: 1,
+                    focus: function( event, ui ) {
+                        event.preventDefault();
+                        $('#curriculum-search').val(ui.item.label);
+                    },
+                    select: function (event, ui) {
+                        event.preventDefault();
+                        $("#curriculum-search").val(ui.item.label);
+                    }
                 })
-                //console.log("test sum nakon dodavanja:" + sum);
-                $('#totalECTS').text(totalECTS);
-                $('#totalHours').text(totalHours);
-              }
-    
-              // brisanje tr - (pojedinog kolegija)
 
-              $('#curriculum-table-row').on('click', 'button', function(){
-                $(this).parent().parent().remove();
+                //For the selected autocomplete field, append it to table row inside table body
+                $('#curriculum-search').on('autocompleteselect', function (e, ui) {
+                    var id = ui.item.value;
+                    var urlGetCurriculum = `http://www.fulek.com/VUA/supit/GetKolegij/${id}`;
+                    var xmlhttpGetSubject = new XMLHttpRequest();
+                    xmlhttpGetSubject.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            var subject = JSON.parse(this.responseText);
 
-                if ($('#curriculum-table-row').length == 0) {
-                    $("#curriculum-table").hide();
-                }
-    
-                var updateECTS = 0;
-                var updateHours = 0;
-    
-                $('#curriculum-table-body tr#curriculum-table-row').each(function() {
-                  var sum_ects = parseInt($(this).find("td#ects").text(), 10);
-                  updateECTS += sum_ects;
-                  var sum_sati = parseInt($(this).find("td#hours").text(), 10);
-                  updateHours += sum_sati;
-                  //console.log('kliknuti', sum_ects)
-                })
-                //console.log("test sum nakon dodavanja:" + sum);
-                $('#totalECTS').text(updateECTS);
-                $('#totalHours').text(updateHours);
-              });
-    
-            };
-            xmlhttpGetSubject.open("GET", urlGetCurriculum, true);
-            xmlhttpGetSubject.send();
-    
-          });
-      }
-    };
-    xmlhttpGetAllSubjects.open("GET", urlGetAllCurriculums, true);
-    xmlhttpGetAllSubjects.send();
+                            $("#curriculum-table-body").append(
+                                `
+                                <tr id="curriculum-table-row">
+                                    <td scope="row">${subject.kolegij}</td>
+                                    <td id="ects">${subject.ects}</td>
+                                    <td id="hours">${subject.sati}</td>
+                                    <td>${subject.predavanja}</td>
+                                    <td>${subject.vjezbe}</td>
+                                    <td>${subject.tip}</td>
+                                    <td><button type="button" id="btn-delete" class="btn btn-outline-danger">Obriši</button></td>
+                                </tr>
+                                `
+                            );
 
+                            if ($('#curriculum-table-row').length > 0) {
+                                $("#curriculum-table").show();
+                            }
 
+                            //Sum the total of ECTS and Hours for each added row
+                            var totalECTS = 0;
+                            var totalHours = 0;
+
+                            $('#curriculum-table-body tr#curriculum-table-row').each(function () {
+                                var sumECTS = +$(this).find("td#ects").text();
+                                totalECTS += sumECTS;
+                                var sumHours = + $(this).find("td#hours").text();
+                                totalHours += sumHours;
+                            })
+                            $('#totalECTS').text(totalECTS);
+                            $('#totalHours').text(totalHours);
+                        }
+
+                        //Delete table row and hide the table if there's no more row in table body
+                        $('#curriculum-table-body #curriculum-table-row').on('click', 'button', function () {
+                            $(this).parent().parent().remove();
+
+                            if ($('#curriculum-table-row').length == 0) {
+                                $("#curriculum-table").hide();
+                            }
+
+                            //Update the total of ECTS and hours when a row has been deleted
+                            var updateECTS = 0;
+                            var updateHours = 0;
+
+                            $('#curriculum-table-body tr#curriculum-table-row').each(function () {
+                                var resumECTS = parseInt($(this).find("td#ects").text(), 10);
+                                updateECTS += resumECTS;
+                                var resumHours = parseInt($(this).find("td#hours").text(), 10);
+                                updateHours += resumHours;
+                            })
+                            $('#totalECTS').text(updateECTS);
+                            $('#totalHours').text(updateHours);
+                        });
+
+                    };
+                    xmlhttpGetSubject.open("GET", urlGetCurriculum, true);
+                    xmlhttpGetSubject.send();
+                });
+            }
+        };
+        xmlhttpGetAllSubjects.open("GET", urlGetAllCurriculums, true);
+        xmlhttpGetAllSubjects.send();
+    }
 });
