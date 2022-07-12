@@ -38,6 +38,4 @@ Introduction to HTML language, its basic elements and the way of writing tags an
 - [Fancybox](https://fancyapps.com/docs/ui/fancybox/)
 - [AOS](https://michalsnik.github.io/aos/)
 - [Typewriter](https://safi.me.uk/typewriterjs/)
-  
-    
-###### *Website is on Croatian language*
+###### *Website is in Croatian language*
