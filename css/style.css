@@ -106,7 +106,7 @@ body{
     width:100%;
     height:37vh;
     object-fit: cover;
-    object-position: 100% 0;
+    object-position: 50% 0;
 }
 
 .custom-icon-size-heading{
@@ -343,6 +343,10 @@ footer{
         font-size: 2.5rem;
     }
 
+    .custom-img-size-news{
+        object-position: 62% 0;
+    }
+
     .custom-background-image{
         padding: 0;
     }
@@ -359,5 +363,10 @@ footer{
 
     .textbox-on-img-header{
         font-size: 2rem;
+    }
+
+    .mediaphone-curriculum{
+        width: 100%;
+        margin: 0;
     }
 }

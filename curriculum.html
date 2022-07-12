@@ -15,22 +15,23 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/jquery-ui.min.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/aos.css">
 </head>
 <body>
     <header>
       <!-- /components/navbar.html -->
       <div id="navbar"></div>
     </header>
-    <main class="news1">
+    <main class="news-article">
         <div class="d-flex justify-content-center mt-5 mb-5">
             <h1 class="fw-bold custom-border-heading">Nastavni plan</h1>
         </div>
-        <div class="d-md-flex justify-content-center gap-5 m-5">
-            <div class="ui-widget m-auto w-50">
+        <div class="d-md-flex justify-content-center gap-5 m-sm-5">
+            <div data-aos="fade-left" class="ui-widget m-auto w-50">
                 <label for="curriculum-search" class="form-label d-block fs-4">Naziv kolegija</label>
                 <input type="text" name="naziv-kolegija" id="curriculum-search" class="form-control fs-4" placeholder="Npr. Standardi u primjeni internetske tehnologije" autofocus>
             </div>
-            <table id="curriculum-table" class="table table-sm table-striped table-hover fs-4 m-auto w-50">
+            <table id="curriculum-table" class="table table-sm table-striped table-hover fs-4 m-auto w-50 mediaphone-curriculum">
                 <thead>
                   <tr>
                     <th scope="col">Kolegij</th>
@@ -62,6 +63,7 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/aos.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

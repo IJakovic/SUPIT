@@ -14,7 +14,7 @@ $(document).ready(function () {
 
         typewriter
             .pauseFor(500)
-            .typeString('<span class="custom-text-shadow">Budi izvrstan u onom što vidiš.</span>')
+            .typeString('<span class="custom-text-shadow">Budi izvrstan u onom što vidiš!</span>')
             .pauseFor(300)
             .deleteChars(6)
             .typeString('<span class="custom-text-shadow">voliš.</span>')
@@ -75,7 +75,7 @@ $(document).ready(function () {
                                     <td>${subject.predavanja}</td>
                                     <td>${subject.vjezbe}</td>
                                     <td>${subject.tip}</td>
-                                    <td><button type="button" id="btn-delete" class="btn btn-outline-danger">Obriši</button></td>
+                                    <td><button type="button" id="btn-delete" class="btn btn-outline-danger fs-5">Obriši</button></td>
                                 </tr>
                                 `
                             );
@@ -129,4 +129,10 @@ $(document).ready(function () {
         xmlhttpGetAllSubjects.open("GET", urlGetAllCurriculums, true);
         xmlhttpGetAllSubjects.send();
     }
+
+    /******Animate On Scroll******/
+    AOS.init({
+        duration: 600,
+        mirror: true
+    });
 });
