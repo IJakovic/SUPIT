@@ -30,7 +30,7 @@ Introduction to HTML language, its basic elements and the way of writing tags an
   - Chapter animations at the moment of display,
   - Using modal dialog boxes (own or external (jQueryUI, Bootstrap and similar to)).
 - Based on the request, evaluate the justification of using elements of jQuery, jQueryUI and Bootstrap libraries and, if justified, implement the solution.
-- Libraries such as Vue, React, Angular, etc. must not be used to create the project
+- Libraries such as Vue, React, Angular, etc. must not be used to create the project.
 ## Used JavaScript and CSS libraries in this project:
 - [Bootstrap](https://getbootstrap.com/)
 - [jQuery](https://jquery.com/)
@@ -38,4 +38,4 @@ Introduction to HTML language, its basic elements and the way of writing tags an
 - [Fancybox](https://fancyapps.com/docs/ui/fancybox/)
 - [AOS](https://michalsnik.github.io/aos/)
 - [Typewriter](https://safi.me.uk/typewriterjs/)
-###### *Website is in Croatian language*
+###### *Website is in Croatian language.*
