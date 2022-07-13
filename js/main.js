@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
     /******Load components******/
-    $("#navbar").load("components/navbar.html");
-    $("#footer").load("components/footer.html");
+    $("#navbar").load("./components/navbar.html");
+    $("#footer").load("./components/footer.html");
 
     /******Typing animation******/
     if (document.URL.includes("index.html")) {
