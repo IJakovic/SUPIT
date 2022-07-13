@@ -1,27 +1,11 @@
+var urlPage = "https://ijakovic.github.io/SUPIT/";
+var urlLocalHost = "http://127.0.0.1:5500/";
+
 $(document).ready(function () {
 
     /******Load components******/
     $("#navbar").load("./components/navbar.html");
     $("#footer").load("./components/footer.html");
-
-    /******Typing animation******/
-    if (document.URL.includes("index.html")) {
-        let typedString =  document.getElementById('typed-string'); 
-
-        let typewriter = new Typewriter(typedString, {
-            loop: false
-        });
-
-        typewriter
-            .pauseFor(500)
-            .typeString('<span class="custom-text-shadow">Budi izvrstan u onom što vidiš!</span>')
-            .pauseFor(300)
-            .deleteChars(6)
-            .typeString('<span class="custom-text-shadow">voliš.</span>')
-            .pauseFor(300)
-            .typeString('</br><span class="custom-color-gradient custom-text-shadow">ZAISKRI</span>.')
-            .start();
-    }
 
     /******Fancybox - image gallery******/
     if (document.URL.includes("news1.html")) {
