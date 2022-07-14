@@ -41,7 +41,9 @@ Introduction to HTML language, its basic elements and the way of writing tags an
 ## How to use:
 1.  Download or clone the whole project
 2.  Recommended to use Visual Studio Code to open the project folder
-3.  Recommended to use Live Server extension to run the website
+3.  Recommended to use Live Server extension to run the website<br>
+You can preview the website here: [https://ijakovic.github.io/SUPIT/](https://ijakovic.github.io/SUPIT/)[^1]
 ###### *Website is in Croatian language.*
 ## My thoughts for this project
 My only knowledge of making a website, in early days, was using the free website builders and this is the first time making a website using HTML, CSS and JavaScript. I learned alot in this course, the professor was very nice and used the best practices. I am happy with the project i made, there are things which could be more improved, but still, for the first time, it was a really great experience.
+[^1]: Github pages runs the website on https and API link i'm using is http (required by project specification) so the Curriculum page (cro. Nastavni plan) input autocomplete field and Contact (cro. Kontakt) modal form won't be able to communicate with the API. Use VS Code and Live Server to run the project on http.
