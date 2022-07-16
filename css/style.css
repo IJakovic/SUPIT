@@ -272,6 +272,7 @@ figure:hover .img-zoom {
 }
 
 .video-container video{
+    position: fixed;
     width:100%;
     height:100vh;
     object-fit: cover;
